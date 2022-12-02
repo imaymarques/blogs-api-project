@@ -8,6 +8,12 @@ const users = async (req, res) => {
   return res.status(201).json({ token: message });
 };
 
+const getUsers = async (_req, res) => {
+  const user = await userService.getUsers();
+  return res.status(200).json(user);
+};
+
 module.exports = {
   users,
+  getUsers,
 };
