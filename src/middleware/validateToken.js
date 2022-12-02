@@ -2,7 +2,7 @@ const jwt = require('../auth/token');
 
 const secret = process.env.JWT_SECRET || 'seusecretdetoken';
 
-const valitateToken = (req, res, next) => {
+const validateToken = (req, res, next) => {
     const { authorization: token } = req.headers;
 
     if (!token) {
@@ -16,4 +16,4 @@ const valitateToken = (req, res, next) => {
     next();
 };
 
-module.exports = valitateToken;
+module.exports = validateToken;
